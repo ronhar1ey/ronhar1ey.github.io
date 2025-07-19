@@ -1,0 +1,161 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css">
+<!--
+Inspired from the design made by 'Teodora':
+https://www.webdesignerforum.co.uk/files/file/63-free-psd-cv-template/
+https://dribbble.com/shots/1141520-PSD-CV-template?list=searches&offset=17
+-->
+
+<script>
+// Enhanced interactivity for Ron Harley's Resume
+console.log("Resume loaded with styling inspired by Teodora");
+
+// Smooth scroll for anchor links
+const menuLinks = document.querySelectorAll('.header_menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sectionId = link.textContent.trim().toLowerCase().replace(/ /g, '_');
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 20,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Download button behavior
+const downloadBtn = document.querySelector('a[href="#"]:has(.entypo-download)');
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Downloading CV...');
+  });
+}
+</script>
+
+<!-- MAIN CONTAINER -->
+<div id="main_container">
+  <!-- HEADER -->
+  <div id="header">
+    <!-- LOGOTYPE/NAME -->
+    <div class="header_logotype_container">
+      <h1 class="logotype_name">Ron <span class="purple">Harley</span></h1>
+      <h2 class="logotype_occupation">Senior Software Engineering Manager | Technical Leadership | Scalable Systems</h2>
+    </div>
+    <!-- MAIN MENU -->
+    <div class="header_menu_container">
+      <ul class="download_print_buttons horizontal_list">
+        <li><a href="#"><span class="icon entypo-download"></span>Download CV</a></li>
+        <li><a href="#"><span class="icon entypo-print"></span>Print CV</a></li>
+      </ul>
+      <div class="clear"></div>
+      <ul class="header_menu horizontal_list">
+        <li><a class="no_border purple" href="#">Profile</a></li>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Work Experience</a></li>
+        <li><a href="#">Certifications</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- LEFT COL -->
+  <div id="left_col">
+    <div class="profile_frame">
+      <div class="profile_picture"></div>
+    </div>
+    <div class="hello_content">
+      <h2>Hello!</h2>
+      <p>I’m a senior engineering leader with a passion for building scalable systems and high-performing teams. I specialize in bridging strategic product goals with engineering execution through thoughtful architecture, automation, and collaboration.</p>
+    </div>
+    <div class="contact_details_content">
+      <h2>Contact details</h2>
+      <p class="purple">Phone:</p>
+      <p>347.889.9451</p>
+      <p class="purple">Email:</p>
+      <p>ron@ronharley.com</p>
+      <p class="purple">LinkedIn:</p>
+      <p><a href="https://linkedin.com/in/ron-harley-65a6062">linkedin.com/in/ron-harley-65a6062</a></p>
+      <p class="purple">Location:</p>
+      <p>Miami, FL</p>
+    </div>
+    <a href="mailto:ron@ronharley.com" class="send_message_button">
+      <span class="cut1"></span>
+      <span class="cut2"></span>
+      <span class="content">Send me a message <span class="fontawesome-double-angle-right"></span></span>
+    </a>
+  </div>
+  <!-- PROFILE CONTENT -->
+  <div id="content_container">
+    <div class="block">
+      <h1>Profile</h1>
+      <p>Dynamic and strategic senior engineering manager with over 15 years of experience in leading software development and quality assurance initiatives. Adept at building cross-functional teams, driving agile transformations, and scaling platforms for growth. Proven ability to merge technical depth with product vision to deliver high-impact solutions.</p>
+    </div>
+    <div class="block">
+      <h2>Core Competencies</h2>
+      <ul>
+        <li>Engineering Team Leadership</li>
+        <li>Agile & Scrum Methodologies</li>
+        <li>Software Architecture & Design</li>
+        <li>Test Automation & CI/CD</li>
+        <li>Cloud Infrastructure (AWS, GCP)</li>
+        <li>Product & Stakeholder Alignment</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, JavaScript, Ruby, SQL</li>
+        <li><strong>Frameworks:</strong> React, Node.js, Django, Flask</li>
+        <li><strong>DevOps:</strong> GitHub Actions, Jenkins, Docker, Kubernetes</li>
+        <li><strong>Cloud:</strong> AWS, GCP</li>
+        <li><strong>Databases:</strong> PostgreSQL, MongoDB, Redshift</li>
+        <li><strong>Testing:</strong> Cypress, Selenium, Pytest, JUnit</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>Experience</h2>
+      <p><strong>Unite Us • Senior Engineering Manager</strong><br>Apr 2020 – Present</p>
+      <ul>
+        <li>Led multiple engineering teams focused on platform services and internal tools, supporting a growing SaaS infrastructure in the healthcare tech space.</li>
+        <li>Implemented engineering best practices, CI/CD pipelines, and cloud-native deployment strategies.</li>
+        <li>Grew the team from 5 to 20+ engineers while reducing release cycles by 40% and boosting code coverage by 60%.</li>
+      </ul>
+      <p><strong>Seafood Souq • Director of Software Engineering</strong><br>May 2019 – Aug 2019</p>
+      <ul>
+        <li>Established software engineering and QA practice from the ground up for a B2B seafood marketplace.</li>
+        <li>Directed development across frontend, backend, and mobile platforms with a strong focus on automation.</li>
+      </ul>
+      <p><strong>Rentlytics (RealPage) • Engineering Lead</strong><br>May 2016 – Oct 2018</p>
+      <ul>
+        <li>Built scalable analytics tools and integrated real estate data pipelines using modern cloud-native tools.</li>
+        <li>Led QA and engineering functions through a successful acquisition.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>Earlier Roles</h2>
+      <ul>
+        <li>QA & Software Engineer – Swimlane, YouEye, Carecloud, HUGE, Sigmacare, Aclara, GetConnected</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>Education</h2>
+      <p><strong>Hampton University</strong><br>1996 – 2001</p>
+    </div>
+    <div class="block">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Certified ScrumMaster (CSM)</li>
+        <li>AWS Certified Solutions Architect – Associate</li>
+        <li>ISTQB Advanced Test Manager</li>
+      </ul>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!-- FOOTER -->
+  <div id="footer">
+    <p class="footer_name">Ron Harley CV 2025</p>
+  </div>
+</div>
