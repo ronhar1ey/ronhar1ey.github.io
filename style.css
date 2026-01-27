@@ -1,6 +1,25 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic');
 
+/* =========================
+   Color Tokens
+   ========================= */
+:root {
+  --bg-page: #f4f4f4;
+  --bg-card: #ffffff;
+  --bg-header: #252a34;
+  --bg-left: #f0f0f0;
+
+  --text: #333333;
+  --text-inverse: #ffffff;
+  --text-dark: #252a34;
+
+  /* Accent color */
+  --accent: #c7d2fe;
+
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
 /* Reset */
 body, h1, h2, h3, h4, h5, h6, p, ul, li, div {
   margin: 0;
@@ -10,8 +29,8 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li, div {
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #f4f4f4;
-  color: #333;
+  background: var(--bg-page);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -21,17 +40,17 @@ body {
   margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px var(--shadow);
 }
 
 /* Header */
 #header {
   width: 100%;
   padding: 20px;
-  background: #252a34;
-  color: white;
+  background: var(--bg-header);
+  color: var(--text-inverse);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,11 +60,12 @@ body {
 .header_logotype_container h1 {
   font-size: 36px;
   font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
-/* Accent color (formerly purple) */
+/* Accent (last name) */
 .header_logotype_container .purple {
-  color: #1f2937; /* slate blue */
+  color: var(--accent);
 }
 
 .header_logotype_container h2 {
@@ -66,15 +86,19 @@ body {
 
 .header_menu_container a {
   text-decoration: none;
-  color: #2563eb; /* muted blue */
+  color: var(--accent);
   font-weight: bold;
+}
+
+.header_menu_container a:hover {
+  text-decoration: underline;
 }
 
 /* Left Column */
 #left_col {
   width: 30%;
   padding: 20px;
-  background: #f0f0f0;
+  background: var(--bg-left);
 }
 
 .profile_frame {
@@ -87,13 +111,26 @@ body {
 .hello_content h2,
 .contact_details_content h2,
 .get_social_content h2 {
-  color: #252a34;
+  color: var(--text-dark);
   margin-bottom: 10px;
 }
 
+/* 🔹 Contact labels: Phone / Email / LinkedIn / Location */
 .contact_details_content p.purple {
-  color: #1f2937; /* slate blue */
-  font-weight: bold;
+  color: var(--text-dark);   /* black */
+  font-weight: 700;          /* stronger bold */
+  letter-spacing: 0.3px;     /* subtle emphasis */
+}
+
+/* Contact values / links */
+.contact_details_content p,
+.contact_details_content a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact_details_content a:hover {
+  text-decoration: underline;
 }
 
 /* Button */
@@ -101,11 +138,15 @@ body {
   display: inline-block;
   margin: 20px 0;
   padding: 10px 15px;
-  background: #1f2937; /* slate blue */
-  color: white;
+  background: var(--accent);
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: bold;
   border-radius: 3px;
+}
+
+.send_message_button:hover {
+  filter: brightness(0.97);
 }
 
 /* Right Content */
@@ -118,9 +159,9 @@ body {
   margin-bottom: 30px;
 }
 
-.block h1, 
+.block h1,
 .block h2 {
-  color: #252a34;
+  color: var(--text-dark);
   margin-bottom: 10px;
 }
 
@@ -133,8 +174,8 @@ body {
 #footer {
   width: 100%;
   padding: 10px;
-  background: #252a34;
-  color: white;
+  background: var(--bg-header);
+  color: var(--text-inverse);
   text-align: center;
   font-size: 14px;
   border-radius: 0 0 6px 6px;
