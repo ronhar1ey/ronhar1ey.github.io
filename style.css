@@ -1,4 +1,3 @@
-
 /* Font */
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic');
 
@@ -44,8 +43,9 @@ body {
   font-weight: 300;
 }
 
+/* Accent color (formerly purple) */
 .header_logotype_container .purple {
-  color: #a29bfe;
+  color: #1f2937; /* slate blue */
 }
 
 .header_logotype_container h2 {
@@ -66,7 +66,7 @@ body {
 
 .header_menu_container a {
   text-decoration: none;
-  color: #a29bfe;
+  color: #2563eb; /* muted blue */
   font-weight: bold;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .contact_details_content p.purple {
-  color: #6c5ce7;
+  color: #1f2937; /* slate blue */
   font-weight: bold;
 }
 
@@ -101,7 +101,7 @@ body {
   display: inline-block;
   margin: 20px 0;
   padding: 10px 15px;
-  background: #6c5ce7;
+  background: #1f2937; /* slate blue */
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -118,7 +118,8 @@ body {
   margin-bottom: 30px;
 }
 
-.block h1, .block h2 {
+.block h1, 
+.block h2 {
   color: #252a34;
   margin-bottom: 10px;
 }
