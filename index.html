@@ -10,30 +10,32 @@ https://dribbble.com/shots/1141520-PSD-CV-template?list=searches&offset=17
 // Enhanced interactivity for Ron Harley's Resume
 console.log("Resume loaded with styling inspired by Teodora");
 
-// Smooth scroll for anchor links
-const menuLinks = document.querySelectorAll('.header_menu a');
-menuLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const sectionId = link.textContent.trim().toLowerCase().replace(/ /g, '_');
-    const section = document.getElementById(sectionId);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 20,
-        behavior: 'smooth'
-      });
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll for anchor links
+  const menuLinks = document.querySelectorAll('.header_menu a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const sectionId = link.textContent.trim().toLowerCase().replace(/ /g, '_');
+      const section = document.getElementById(sectionId);
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop - 20,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-});
 
-// Download button behavior
-const downloadBtn = document.querySelector('.download_print_buttons a');
-if (downloadBtn) {
-  downloadBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.print();
-  });
-}
+  // Download button behavior
+  const downloadBtn = document.querySelector('.download_print_buttons a');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.print();
+    });
+  }
+});
 </script>
 
 <!-- MAIN CONTAINER -->
@@ -56,7 +58,6 @@ if (downloadBtn) {
         <li><a href="#">Education</a></li>
         <li><a href="#">Skills</a></li>
         <li><a href="#">Work Experience</a></li>
-        <li><a href="#">Certifications</a></li>
       </ul>
     </div>
   </div>
@@ -134,13 +135,13 @@ if (downloadBtn) {
     tooling, CI/CD and automation, cloud-native architectures, data pipelines,
     and reliability-focused engineering practices. I bring hands-on experience
     across Python, JavaScript, and Ruby ecosystems, with a focus on designing,
-    scaling, and operating systems on AWS and GCP.
+    scaling, and operating systems on AWS.
   </p>
 
   
   <p>
     <strong>Representative technologies:</strong><br>
-    Python, JavaScript, Ruby • AWS, GCP • CI/CD (GitHub Actions, Jenkins) •
+    Python, JavaScript, Ruby • AWS • CI/CD (GitHub Actions, Jenkins) •
     Containers (Docker, Kubernetes) • Data (PostgreSQL, MongoDB, Redshift) •
     Automated testing and quality frameworks
   </p>
@@ -179,14 +180,6 @@ if (downloadBtn) {
     <div class="block" id="education">
       <h2>Education</h2>
       <p><strong>Hampton University</strong><br>1996 – 2001</p>
-    </div>
-    <div class="block" id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Certified ScrumMaster (CSM)</li>
-        <li>AWS Certified Solutions Architect – Associate</li>
-        <li>ISTQB Advanced Test Manager</li>
-      </ul>
     </div>
   </div>
 
