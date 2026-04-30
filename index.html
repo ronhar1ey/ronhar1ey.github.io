@@ -1,193 +1,279 @@
-<link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css">
-<!--
-Inspired from the design made by 'Teodora':
-https://www.webdesignerforum.co.uk/files/file/63-free-psd-cv-template/
-https://dribbble.com/shots/1141520-PSD-CV-template?list=searches&offset=17
--->
-
-<script>
-// Enhanced interactivity for Ron Harley's Resume
-console.log("Resume loaded with styling inspired by Teodora");
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll for anchor links
-  const menuLinks = document.querySelectorAll('.header_menu a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const sectionId = link.textContent.trim().toLowerCase().replace(/ /g, '_');
-      const section = document.getElementById(sectionId);
-      if (section) {
-        window.scrollTo({
-          top: section.offsetTop - 20,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Download button behavior
-  const downloadBtn = document.querySelector('.download_print_buttons a');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.print();
-    });
-  }
-});
-</script>
-
-<!-- MAIN CONTAINER -->
-<div id="main_container">
-  <!-- HEADER -->
-  <div id="header">
-    <!-- LOGOTYPE/NAME -->
-    <div class="header_logotype_container">
-      <h1 class="logotype_name">Ron <span class="purple">Harley</span></h1>
-      <h2 class="logotype_occupation">Senior Engineering Manager | Internal Platforms | Delivery Leadership</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ron Harley | Senior Engineering Manager</title>
+  <meta
+    name="description"
+    content="Senior Engineering Manager specializing in platform modernization, delivery predictability, and quality engineering leadership."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="#hero">RON HARLEY</a>
+      <div class="topbar__meta">
+        <span>Miami, FL | Remote + NYC</span>
+        <a href="tel:3478899451">347.889.9451</a>
+        <a href="mailto:ron@ronharley.com">ron@ronharley.com</a>
+        <a href="https://linkedin.com/in/ron-harley-65a6062" target="_blank" rel="noreferrer">
+          linkedin.com/in/ron-harley-65a6062
+        </a>
+      </div>
+      <a class="resume-button" href="ron-harley-general-resume.pdf" download>Download Resume PDF</a>
     </div>
-    <!-- MAIN MENU -->
-    <div class="header_menu_container">
-      <ul class="download_print_buttons horizontal_list">
-        <li><a href="#"><span class="icon entypo-download"></span>Download Resume</a></li>
-      </ul>
-      <div class="clear"></div>
-      <ul class="header_menu horizontal_list">
-        <li><a class="no_border purple" href="#">Profile</a></li>
-        <li><a href="#">Education</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Work Experience</a></li>
-      </ul>
-    </div>
-  </div>
+  </header>
 
-  <!-- LEFT COL -->
-  <div id="left_col">
-    <div class="profile_frame">
-      <div class="profile_picture"></div>
-    </div>
+  <main>
+    <section class="hero-shell" id="hero">
+      <div class="page-shell">
+        <article class="hero-card">
+          <p class="eyebrow">Senior Engineering Leadership</p>
+          <h1>RON HARLEY</h1>
+          <p class="hero-card__subtitle">Senior Engineering Manager | Platform, Delivery, and Quality</p>
+          <p class="hero-card__summary">
+            I help SaaS organizations improve delivery predictability by modernizing CI/CD, strengthening
+            quality automation, and scaling distributed engineering teams.
+          </p>
 
-    <div class="hello_content">
-      <h2>Hello!</h2>
-      <p><strong>Senior Engineering Manager focused on helping organizations execute through change.</strong> I lead distributed engineering teams building scalable internal platforms and systems that improve delivery predictability, reduce operational friction, and support evolving product strategy.</p>
-    </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <strong>20+</strong>
+              <span>Years In Engineering</span>
+            </div>
+            <div class="stat-card">
+              <strong>12+</strong>
+              <span>Years Leading Distributed Teams</span>
+            </div>
+            <div class="stat-card">
+              <strong>~40%</strong>
+              <span>Defect Reduction</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <div class="contact_details_content">
-      <h2>Contact details</h2>
-      <p class="purple">Phone:</p>
-      <p>347.889.9451</p>
-      <p class="purple">Email:</p>
-      <p>ron@ronharley.com</p>
-      <p class="purple">LinkedIn:</p>
-      <p><a href="https://linkedin.com/in/ron-harley-65a6062">linkedin.com/in/ron-harley-65a6062</a></p>
-      <p class="purple">Location:</p>
-      <p>Miami, FL</p>
-    </div>
+    <section class="section">
+      <div class="page-shell section__content">
+        <p class="eyebrow">Leadership Approach</p>
+        <p class="section__lead">
+          I run teams with explicit ownership, measurable outcomes, and fast feedback loops. The operating
+          model emphasizes calm execution, predictable delivery, pragmatic quality standards, and close
+          product-engineering alignment so strategy turns into shipped value without organizational drag.
+        </p>
+      </div>
+    </section>
 
-    <a href="mailto:ron@ronharley.com" class="send_message_button">
-      <span class="cut1"></span>
-      <span class="cut2"></span>
-      <span class="content">Send me a message <span class="fontawesome-double-angle-right"></span></span>
-    </a>
-  </div>
+    <section class="section section--dark">
+      <div class="page-shell section__content">
+        <p class="eyebrow eyebrow--accent">Proof Of Impact</p>
+        <h2>Engineering outcomes that compound across delivery, quality, and team velocity.</h2>
+        <p class="section__intro section__intro--dark">
+          Ron Harley drives predictable execution and modern platform practices that turn engineering effort
+          into measurable business throughput.
+        </p>
 
-  <!-- PROFILE CONTENT -->
-  <div id="content_container">
+        <div class="impact-grid">
+          <article class="impact-card">
+            <strong>92%</strong>
+            <h3>Roadmap Commitment Reliability</h3>
+            <p>Stabilized sprint execution and tighter planning by aligning platform work to roadmap outcomes.</p>
+          </article>
+          <article class="impact-card">
+            <strong>4x</strong>
+            <h3>CI/CD Throughput</h3>
+            <p>Modernized deployment workflows and reduced release friction across backend and internal tools.</p>
+          </article>
+          <article class="impact-card">
+            <strong>-63%</strong>
+            <h3>Escaped Defects</h3>
+            <p>Embedded test automation and contract checks to catch regressions earlier in delivery.</p>
+          </article>
+          <article class="impact-card">
+            <strong>+31%</strong>
+            <h3>AI-Assisted Delivery Velocity</h3>
+            <p>Applied AI workflows to accelerate test creation, engineering insights, and time-to-confidence.</p>
+          </article>
+        </div>
 
-    <div class="block" id="profile">
-      <h1>Profile</h1>
-      <p>I work at the intersection of engineering, product, and operations to turn ambiguity into clear, shipped outcomes. My focus is on building teams and systems that scale — especially during periods of growth, reorganization, or increased operational complexity.</p>
-    </div>
-    <div class="block" id="skills">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Stabilize teams after reorgs or rapid change</li>
-        <li>Improve delivery predictability and execution confidence</li>
-        <li>Reduce operational friction through internal platforms and tooling</li>
-        <li>Align product intent with engineering execution</li>
-        <li>Apply AI-assisted tooling to accelerate automated test creation and embed quality directly into CI/CD pipelines, improving release confidence without slowing teams down</li>
-      </ul>
-    </div>
+        <p class="impact-note">
+          Leadership impact: built cross-functional trust, coached senior ICs, and aligned platform
+          investment to roadmap outcomes.
+        </p>
+      </div>
+    </section>
 
-    <div class="block">
-      <h2>How I Work</h2>
-      <p>I believe strong engineering organizations are built on clarity, trust, and pragmatic execution. I focus on clear ownership, thoughtful system design that prioritizes reliability and maintainability, and embedding quality and automation early to reduce risk and rework.</p>
-      <p>My leadership style is calm, collaborative, and outcomes-driven — particularly effective in high-ambiguity environments. I’m pragmatic about AI adoption, using it to reduce toil and strengthen feedback loops, such as accelerating automated test coverage and embedding quality earlier in CI/CD without introducing unnecessary risk.</p>
-    </div>
+    <section class="section">
+      <div class="page-shell section__content">
+        <p class="eyebrow">Core Competencies</p>
+        <div class="competency-grid">
+          <article>
+            <h3>Engineering Leadership &amp; Team Development</h3>
+            <p>
+              Lead distributed teams through hiring, coaching, performance management, and promotion planning
+              to build long-term organizational capacity.
+            </p>
+          </article>
+          <article>
+            <h3>Roadmap Planning &amp; Delivery Execution</h3>
+            <p>
+              Partner with product and operations to prioritize roadmaps, improve delivery predictability,
+              and sustain release cadence.
+            </p>
+          </article>
+          <article>
+            <h3>CI/CD Modernization &amp; Quality Engineering</h3>
+            <p>
+              Embed quality gates, automation, and release controls into GitHub Actions-based pipelines to
+              improve reliability.
+            </p>
+          </article>
+          <article>
+            <h3>Cloud, Automation, and AI Integration</h3>
+            <p>
+              Apply AWS-native platform patterns and AI-assisted workflows including test generation and
+              LLM-powered engineering insights.
+            </p>
+          </article>
+        </div>
 
-    <div class="block">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Engineering Leadership & Team Development</li>
-        <li>Delivery Predictability & Execution</li>
-        <li>Internal Platforms & Operational Enablement</li>
-        <li>Quality, Reliability & Risk Reduction</li>
-        <li>Product & Operations Partnership</li>
-        <li>Distributed Team Leadership</li>
-      </ul>
-    </div>
+        <div class="foundation-row">
+          <div>
+            <p class="eyebrow">Technical Foundation</p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>Ruby</li>
+              <li>AWS</li>
+              <li>GitHub Actions</li>
+              <li>CI/CD</li>
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>PostgreSQL</li>
+              <li>REST APIs</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>NextJS</li>
+              <li>Terraform</li>
+              <li>Playwright</li>
+              <li>Selenium</li>
+            </ul>
+          </div>
+          <div class="education-block">
+            <p class="eyebrow">Education</p>
+            <p>Hampton University — Entrepreneurship (Undergraduate Studies)</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="block">
-  <h2>Technical Foundation</h2>
-  <p>
-    Strong technical background across backend and platform systems, internal
-    tooling, CI/CD and automation, cloud-native architectures, data pipelines,
-    and reliability-focused engineering practices. I bring hands-on experience
-    across Python, JavaScript, and Ruby ecosystems, with a focus on designing,
-    scaling, and operating systems on AWS.
-  </p>
+    <section class="section">
+      <div class="page-shell section__content">
+        <p class="eyebrow">What Makes Me Stand Out</p>
+        <h2>Leadership Edge</h2>
+        <p class="section__intro">
+          Engineering leadership focused on scalable platform systems, interoperability, and modernization
+          that increase organizational leverage, operational clarity, and long-term resilience.
+        </p>
 
-  
-  <p>
-    <strong>Representative technologies:</strong><br>
-    Python, JavaScript, Ruby • AWS • CI/CD (GitHub Actions, Jenkins) •
-    Containers (Docker, Kubernetes) • Data (PostgreSQL, MongoDB, Redshift) •
-    Automated testing and quality frameworks
-  </p>
-</div>
+        <div class="edge-grid">
+          <article class="edge-card">
+            <h3>Systemic Thinking</h3>
+            <p>Treats engineering quality, release process, and team design as one operating system.</p>
+          </article>
+          <article class="edge-card">
+            <h3>Calm Under Ambiguity</h3>
+            <p>Stabilizes teams during org change while keeping delivery and quality standards high.</p>
+          </article>
+          <article class="edge-card">
+            <h3>AI With Practical ROI</h3>
+            <p>Applies AI where it measurably improves test creation, insights, and time-to-confidence.</p>
+          </article>
+        </div>
 
-    <div class="block" id="work_experience">
-      <h2>Experience</h2>
+        <div class="conversation-bar">
+          <span>Open to senior engineering leadership conversations</span>
+          <div>
+            <a href="mailto:ron@ronharley.com">ron@ronharley.com</a>
+            <a href="tel:3478899451">347.889.9451</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p><strong>Unite Us • Senior Engineering Manager</strong><br>Apr 2020 – Present</p>
-      <ul>
-        <li>Manage 8 direct reports across distributed internal platform teams within a multi-product healthcare SaaS organization.</li>
-        <li>Led development of a new configuration application and implemented a GitHub Actions–based CI/CD pipeline, enabling consistent weekly release cadence and improving deployment reliability.</li>
-        <li>Introduced Playwright-based automated testing and AI-assisted test generation, reducing production defects by ~40% and increasing release confidence.</li>
-        <li>Partner closely with product and operations leadership to translate complex workflows into scalable internal systems that improve delivery predictability.</li>
-        <li>Promoted engineers to Senior, Staff, and Engineering Manager roles, strengthening leadership bench and improving team performance through organizational change.</li>
-      </ul>
+    <section class="section section--muted">
+      <div class="page-shell section__content">
+        <p class="eyebrow">Professional Experience</p>
 
-      <p><strong>Seafood Souq • Director of Software Engineering</strong><br>May 2019 – Aug 2019</p>
-      <ul>
-        <li>Established software engineering and quality practices for a B2B marketplace.</li>
-        <li>Directed development across frontend, backend, and mobile with a strong focus on automation and delivery reliability.</li>
-      </ul>
+        <div class="experience-stack">
+          <article class="experience-card">
+            <p class="role-dates">Sep 2021 - Present</p>
+            <h2>Unite Us</h2>
+            <h3>Engineering Manager -> Senior Engineering Manager, Internal Platforms</h3>
+            <p>
+              Led distributed backend and internal platform teams for a multi-product healthcare SaaS
+              organization. Currently manage 8 direct reports, drive roadmap planning with product and
+              operations leaders, and led a configuration application plus GitHub Actions CI/CD modernization
+              enabling weekly releases. Introduced Playwright automation and AI-assisted test generation,
+              reducing production defects by ~40%, while leading hiring and career growth to Senior, Staff,
+              and EM roles.
+            </p>
+            <ul class="pill-list">
+              <li>Internal Platforms</li>
+              <li>Release Management</li>
+              <li>AI-Assisted Testing</li>
+              <li>People Leadership</li>
+            </ul>
+          </article>
 
-      <p><strong>Rentlytics (RealPage) • Engineering Lead</strong><br>May 2016 – Oct 2018</p>
-      <ul>
-        <li>Built analytics tools and integrated real estate data pipelines using cloud-native approaches.</li>
-        <li>Led QA and engineering functions through a successful acquisition.</li>
-      </ul>
-    </div>
+          <article class="experience-card">
+            <p class="role-dates">Apr 2020 - Sep 2021</p>
+            <h2>Unite Us</h2>
+            <h3>Test Engineering Manager</h3>
+            <p>
+              Established the QA engineering function for backend platform teams, implemented CI-based
+              automation strategy, and standardized testing frameworks across microservices, reducing
+              production defects by ~40% and improving release confidence.
+            </p>
+            <ul class="pill-list">
+              <li>QA Strategy</li>
+              <li>Automation</li>
+              <li>CI Platforms</li>
+            </ul>
+          </article>
 
-    <div class="block">
-      <h2>Earlier Roles</h2>
-      <ul>
-        <li>QA & Software Engineer – Swimlane, YouEye, Carecloud, HUGE, Sigmacare, Aclara, GetConnected</li>
-      </ul>
-    </div>
-    <div class="block" id="education">
-      <h2>Education</h2>
-      <p><strong>Hampton University</strong><br>1996 – 2001</p>
-    </div>
-  </div>
+          <article class="experience-card">
+            <p class="role-dates">May 2019 - Aug 2019</p>
+            <h2>Seafood Souq</h2>
+            <h3>Director of Software Quality Assurance</h3>
+            <p>
+              Directed QA strategy for a global B2B marketplace. Standardized automation and CI pipelines to
+              improve release reliability and quality outcomes across teams.
+            </p>
+            <ul class="pill-list">
+              <li>Global B2B Marketplace</li>
+              <li>Quality Automation</li>
+              <li>Release Reliability</li>
+            </ul>
+          </article>
 
-  <div class="clear"></div>
+          <article class="experience-strip">
+            <span>Earlier Roles (2002-2018)</span>
+            <p>Rentlytics (RealPage), Swimlane, YouEye, Carecloud, HUGE, and others.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <div id="footer">
-    <p class="footer_name">Ron Harley Resume 2026</p>
-  </div>
-</div>
+  </main>
+
+</body>
+</html>
