@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ron Harley General Resume</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0.55in;
+    }
+
+    :root {
+      --ink: #13213a;
+      --ink-soft: #44516a;
+      --muted: #70809e;
+      --line: #dbe3f0;
+      --line-strong: #bfcbe0;
+      --surface: #f6f9fc;
+      --accent: #224f94;
+      --accent-soft: #edf3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.42;
+      background: #ffffff;
+    }
+
+    .resume {
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 24px;
+      align-items: end;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--line-strong);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .title {
+      margin-top: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .summary {
+      margin-top: 14px;
+      color: var(--ink-soft);
+      font-size: 0.97rem;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact p + p {
+      margin-top: 6px;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 22px;
+      list-style: none;
+      padding: 0;
+      font-size: 0.92rem;
+    }
+
+    .highlights li {
+      position: relative;
+      padding-left: 14px;
+      color: var(--ink-soft);
+    }
+
+    .highlights li::before,
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .skill-card {
+      padding: 10px 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 6px;
+      font-size: 0.83rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .skill-card p {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+
+    .experience-item + .experience-item,
+    .earlier-grid,
+    .education {
+      margin-top: 14px;
+    }
+
+    .experience-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      font-size: 1.02rem;
+      font-weight: 800;
+    }
+
+    .dates {
+      white-space: nowrap;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .role {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .location {
+      margin-top: 2px;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .bullets li + li {
+      margin-top: 5px;
+    }
+
+    .role-stack {
+      margin-top: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fbfcfe;
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+    }
+
+    .role-stack strong {
+      color: var(--ink);
+    }
+
+    .earlier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .earlier-card {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+
+    .earlier-card h3 {
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+
+    .earlier-card p {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .education {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    .education p:last-child {
+      color: var(--ink-soft);
+    }
+
+    @media print {
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .header,
+      .skills,
+      .highlights,
+      .earlier-grid,
+      .education {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .contact,
+      .dates {
+        text-align: left;
+      }
+
+      .experience-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <header class="header">
+      <div>
+        <h1>RON HARLEY</h1>
+        <p class="title">Engineering Leader | Platform Strategy, Delivery Modernization, and Quality Transformation</p>
+        <p class="summary">
+          Engineering leader with 20+ years of experience building scalable platform systems, modernizing
+          delivery workflows, and strengthening quality engineering across SaaS organizations. Proven record
+          leading distributed teams through platform strategy, CI/CD modernization, interoperability efforts,
+          AI-assisted development workflows, and organizational scaling that increases clarity, leverage, and
+          operational resilience.
+        </p>
+      </div>
+      <div class="contact">
+        <p>United States</p>
+        <p><a href="mailto:ron@ronharley.com">ron@ronharley.com</a></p>
+        <p><a href="tel:3478899451">347.889.9451</a></p>
+        <p><a href="https://www.linkedin.com/in/ron-harley-65a6062">linkedin.com/in/ron-harley-65a6062</a></p>
+        <p><a href="https://www.ronharley.com">ronharley.com</a></p>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Leadership Profile</h2>
+      <ul class="highlights">
+        <li>Lead engineering organizations spanning internal platforms, configuration systems, interoperability, and data-driven tooling.</li>
+        <li>Translate product and operational complexity into scalable systems, explicit ownership models, and dependable execution.</li>
+        <li>Modernize CI/CD, test automation, and release governance to improve reliability and reduce delivery friction.</li>
+        <li>Apply AI-assisted development and test generation where it produces practical gains in quality, throughput, and engineer leverage.</li>
+        <li>Coach senior engineers and emerging leaders while strengthening technical ownership and organizational maturity.</li>
+        <li>Build cross-functional alignment across engineering, product, operations, data, and client-facing stakeholders.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="skills">
+        <article class="skill-card">
+          <h3>Leadership</h3>
+          <p>Team development, coaching, hiring, performance management, org design, stakeholder alignment</p>
+        </article>
+        <article class="skill-card">
+          <h3>Platform</h3>
+          <p>Internal platforms, configuration systems, interoperability, microservices, enterprise systems</p>
+        </article>
+        <article class="skill-card">
+          <h3>Delivery</h3>
+          <p>CI/CD modernization, release governance, defect reduction, risk management, operational readiness</p>
+        </article>
+        <article class="skill-card">
+          <h3>Technical</h3>
+          <p>Python, Ruby, TypeScript, React, Next.js, AWS, Terraform, Docker, Kubernetes, Playwright, Selenium, SQL</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">Unite Us</p>
+            <p class="role">Senior Engineering Manager | Engineering Manager | Manager of Test Engineering | Data Engineering Team Lead | Senior Software Engineer in Test</p>
+            <p class="location">United States / New York, NY</p>
+          </div>
+          <p class="dates">Sep 2019 - Present</p>
+        </div>
+        <ul class="bullets">
+          <li>Lead engineering teams responsible for internal platform systems, configuration tooling, delivery modernization, and interoperability across a multi-product healthcare SaaS environment.</li>
+          <li>Defined and drove the build-out of a centralized configuration platform that increased operational autonomy for internal teams and reduced engineering bottlenecks.</li>
+          <li>Operationalized AI-assisted development and test generation workflows to expand automation coverage, reduce manual effort, and improve engineering efficiency.</li>
+          <li>Strengthened CI/CD and release practices across teams, improving reliability and reducing release friction in a microservices environment.</li>
+          <li>Partnered with product, operations, and data leadership to improve analytics visibility, data reliability, and cross-functional execution.</li>
+          <li>Developed senior engineers and emerging leaders, increasing technical ownership and organizational maturity across the group.</li>
+        </ul>
+        <div class="role-stack">
+          <strong>Recent role progression:</strong> Senior Engineering Manager (Apr 2025-Present), Engineering Manager (Sep 2021-Apr 2025), Manager of Test Engineering (Mar 2021-Sep 2021), Data Engineering Team Lead (Apr 2020-Mar 2021), Senior Software Engineer in Test (Sep 2019-Mar 2021)
+        </div>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">Seafood Souq</p>
+            <p class="role">Director of Software Quality Assurance (Remote)</p>
+            <p class="location">Dubai, United Arab Emirates</p>
+          </div>
+          <p class="dates">May 2019 - Aug 2019</p>
+        </div>
+        <ul class="bullets">
+          <li>Directed software quality strategy for a remote global B2B marketplace organization.</li>
+          <li>Standardized automation and CI practices to improve release reliability and delivery consistency across distributed teams.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">Rentlytics</p>
+            <p class="role">Senior Quality Assurance Engineer (Remote)</p>
+            <p class="location">San Francisco Bay Area</p>
+          </div>
+          <p class="dates">May 2016 - Oct 2018</p>
+        </div>
+        <ul class="bullets">
+          <li>Led QA strategy and delivery execution across four engineering teams and two applications, establishing standardized testing and release governance processes.</li>
+          <li>Built and scaled automated testing frameworks integrated into CI/CD pipelines using Jenkins and CircleCI, reducing regression risk and strengthening release reliability.</li>
+          <li>Managed and mentored an offshore team of four engineers, improving accountability, execution quality, and cross-team collaboration.</li>
+          <li>Introduced performance and load testing practices with Locust to identify bottlenecks earlier and improve application stability.</li>
+          <li>Partnered with product, engineering, and clients to validate integration data, improve defect workflows, and increase deployment confidence.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">Swimlane</p>
+            <p class="role">Senior Quality Assurance Engineer (Remote)</p>
+            <p class="location">Miami / Fort Lauderdale Area</p>
+          </div>
+          <p class="dates">Mar 2016 - May 2016</p>
+        </div>
+        <ul class="bullets">
+          <li>Owned cross-browser, cross-device, and mobile testing across iOS and Android platforms to support release stability in a distributed engineering environment.</li>
+          <li>Drove defect triage, release risk communication, and collaborative quality practices across a fully remote engineering team.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">YouEye</p>
+            <p class="role">Senior Quality Assurance Engineer (Remote)</p>
+            <p class="location">Mountain View, CA</p>
+          </div>
+          <p class="dates">Aug 2015 - Mar 2016</p>
+        </div>
+        <ul class="bullets">
+          <li>Established a structured QA process that reduced production defects by 90% and improved release stability ahead of acquisition.</li>
+          <li>Built and maintained Ruby/Selenium WebDriver automation frameworks, increasing regression coverage and accelerating release confidence.</li>
+          <li>Introduced formal defect triage, risk communication, and mitigation workflows that improved cross-functional release readiness.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">CareCloud</p>
+            <p class="role">QA Engineer</p>
+            <p class="location">Miami / Fort Lauderdale Area</p>
+          </div>
+          <p class="dates">Nov 2013 - Aug 2015</p>
+        </div>
+        <ul class="bullets">
+          <li>Supported quality and release management within an Agile engineering environment delivering monthly production releases.</li>
+          <li>Designed and executed regression, mobile, and cross-platform testing strategies across web and iOS/Android applications.</li>
+          <li>Developed automated test suites using RSpec, Ranorex, and JMeter to improve regression coverage and performance validation.</li>
+          <li>Managed defect tracking, test planning, and release candidate deployments while partnering closely with development, UX, product, and project teams.</li>
+        </ul>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-head">
+          <div>
+            <p class="company">HUGE Inc.</p>
+            <p class="role">QA Manager / Principal Quality Assurance Engineer | Quality Assurance Lead</p>
+            <p class="location">Brooklyn, NY</p>
+          </div>
+          <p class="dates">Oct 2009 - Oct 2013</p>
+        </div>
+        <ul class="bullets">
+          <li>Managed and developed cross-functional teams of up to eight full-time employees delivering web and mobile applications end-to-end across the SDLC.</li>
+          <li>Led the transition from Waterfall to Agile Scrum delivery, establishing roadmaps, sprint ceremonies, and delivery governance across distributed teams.</li>
+          <li>Defined UAT processes, documentation standards, and defect triage workflows that improved release readiness and client transparency.</li>
+          <li>Partnered with engineering, UX, design, and business analysis teams to align requirements, mitigate risk, and improve estimation and release planning.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Earlier Experience</h2>
+      <div class="earlier-grid">
+        <article class="earlier-card">
+          <h3>SigmaCare</h3>
+          <p>Quality Assurance Engineer | 2007-2009</p>
+          <p>Supported healthcare platform quality, data validation, release readiness, and implementation support.</p>
+        </article>
+        <article class="earlier-card">
+          <h3>Aclara</h3>
+          <p>Quality Assurance Engineer | 2006-2007</p>
+          <p>Validated high-traffic energy web applications, managed monthly regression cycles, and strengthened automation coverage.</p>
+        </article>
+        <article class="earlier-card">
+          <h3>GetConnected Inc.</h3>
+          <p>Quality Assurance Engineer | 2002-2006</p>
+          <p>Supported partner web properties and kiosk deployments with UI/database testing, SQL validation, and defect triage.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="education">
+        <p><strong>Hampton University</strong></p>
+        <p>Entrepreneurship (Undergraduate Studies) | 1996-2001</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
